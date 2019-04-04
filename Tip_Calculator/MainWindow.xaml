@@ -5,8 +5,122 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tip_Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="TipCalculator" Height="700" Width="480">
+    <Grid Background="Gray" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="400" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <TextBlock Margin="20, 0, 20, 0" 
+                   Grid.Row="0" 
+                   Grid.Column="0"
+                   FontSize="40"
+                   >
+            Tip Calculator
+        </TextBlock>
+
+        <TextBlock Margin="20, 0, 20, 0" 
+                   Grid.Row="1" 
+                   Grid.Column="0"
+                   FontSize="28" Foreground="#FFB39264">
+            Enter the Bill Amount
+        </TextBlock>
+        <StackPanel Name="myStackPanel" Grid.Row="2" Grid.Column="0"   Margin="20, 0, 20, 0">
+            <TextBlock HorizontalAlignment="Left" 
+                   TextWrapping="Wrap" 
+                   Text="Bill Amount"
+                   FontSize="24"
+                   Margin="0,5"  
+                       />
+            <TextBox x:Name="billAmountTextBox" 
+                     Text=""
+                     TextAlignment="Right"
+                     HorizontalAlignment="Left" 
+                     TextWrapping="Wrap" 
+                     VerticalAlignment="Top" 
+                     InputScope="Number"
+                     Width="100"
+                     FontSize="24" 
+                     Margin="0,5"  
+                     LostFocus="AmountTextBox_LostFocus" 
+                     TextChanged="BillAmountTextBox_TextChanged" 
+                     GotFocus="AmountTextBox_GotFocus"
+                     />
+
+            <TextBlock HorizontalAlignment="Left" 
+                       TextWrapping="Wrap" 
+                       Text="Percent To Tip:" 
+                       VerticalAlignment="Top"
+                       FontSize="24"
+                       Margin="0,20,0,0" Foreground="#FFB39264"
+                       />
+
+            <RadioButton Content="10% - Horrible Service" 
+                         
+                         Tag="0.1" 
+                         GroupName="percentRadio" 
+                         Click="RadioButton_Click"
+                         FontSize="20"
+                         Margin="0,5" Cursor="Arrow" 
+                         
+                         />
+
+
+            <RadioButton Content="18% - Acceptable Service" 
+                         Tag="0.18" 
+                         GroupName="percentRadio" 
+                         IsChecked="True" 
+                         FontSize="20"
+                         Click="RadioButton_Click" 
+                         Margin="0,5"
+                         />
+
+            <RadioButton Content="25% - Great Service" 
+                         Tag="0.25" 
+                         GroupName="percentRadio" 
+                         FontSize="20"
+                         Click="RadioButton_Click"
+                         Margin="0,5"  
+                         />
+        </StackPanel>
+        <StackPanel Name="myStackPanel2" Grid.Row="2"   Margin="49,254,199,10">
+            <TextBlock HorizontalAlignment="Left" 
+                   TextWrapping="Wrap" 
+                   Text="Amount to Tip:"
+                   FontSize="24"
+                   Margin="0,20,0,0"
+                   />
+
+            <TextBlock Name="amountToTipTextBlock" 
+                       HorizontalAlignment="Left" 
+                   TextWrapping="Wrap" 
+                   VerticalAlignment="Top"
+                   Text="$0.00"
+                    FontSize="36"  Foreground="#FFB39264"
+                   />
+            <TextBlock HorizontalAlignment="Left" 
+                   TextWrapping="Wrap" 
+                   VerticalAlignment="Top"
+                   Text="Total Bill:"
+                       FontSize="24"
+                       Margin="0,20,0,0"
+                   />
+
+            <TextBlock x:Name="totalTextBlock" 
+                   HorizontalAlignment="Left" 
+                   TextWrapping="Wrap" 
+                   VerticalAlignment="Top"
+                   Text="$0.00"
+                       FontSize="36"                       
+                   />
+
+        </StackPanel>
     </Grid>
+
 </Window>
+
