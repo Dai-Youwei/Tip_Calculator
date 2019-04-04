@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Tip_Calculator"
         mc:Ignorable="d"
-        Title="TipCalculator" Height="700" Width="480">
+        Title="TipCalculator" Height="700" Width="490">
     <Grid Background="Gray" >
         <Grid.RowDefinitions>
             <RowDefinition Height="80" />
